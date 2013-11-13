@@ -1,0 +1,2 @@
+1 declare a string and print it.
+2 create a function which takes a string and a pattern and return the position of the first pattern
