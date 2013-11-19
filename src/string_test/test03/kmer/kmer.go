@@ -2,7 +2,7 @@ package kmer
 
 import "fmt"
 
-func Most_kmer(dna string, k int) []string {
+func Most_kmer(dna string, k int) {
     my := make(map[string]int)
     var temp_wrd string
     for inc := 0; inc < len(dna); inc++ {
@@ -36,8 +36,6 @@ func Most_kmer(dna string, k int) []string {
             fmt.Print(k + " ")
         }
     }
-
-    return []string{"a","b"}
 }
 
 func Kmer_occ(f_dna, f_pat []byte) int {

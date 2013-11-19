@@ -14,12 +14,11 @@ import (
 var k []byte
 var file_name []byte
 
-func frq_wrd_with_k(Text_name []byte, k int) []string {
-    return []string{"a", "b"}
+func frq_wrd_with_k(Text_name []byte, k int) {
 }
 
 // Take a text_name and return a list of most_kmer
-func frq_wrd(Text_name []byte) []string {
+func frq_wrd(Text_name []byte) {
     buffer, err := ioutil.ReadFile(string(Text_name))
 
     if err != nil {
@@ -37,11 +36,7 @@ func frq_wrd(Text_name []byte) []string {
     dna := list[i]
     k, err := strconv.Atoi(list[i+1])
 
-    // init mapping
     kmer.Most_kmer(dna, k)
-    //my := make(map[string]int)
-
-    return []string{"o", "i"}
 }
 
 func main() {
