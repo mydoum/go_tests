@@ -1,13 +1,13 @@
 package main
 
 import (
-    "string_test/test03/kmer"
     "fmt"
-    "os"
-    "log"
     "io/ioutil"
-    "strings"
+    "log"
+    "os"
     "strconv"
+    "string_test/test03/kmer"
+    "strings"
 )
 
 // variables and structures
@@ -22,14 +22,14 @@ func frq_wrd(Text_name []byte) {
     buffer, err := ioutil.ReadFile(string(Text_name))
 
     if err != nil {
-            log.Fatal(err)
+        log.Fatal(err)
     }
 
     var list []string = strings.Split(string(buffer), "\n")
 
     // allow to escape the first array if we have a Format1 type
     i := 0
-    if list[0]=="Input" {
+    if list[0] == "Input" {
         i = 1
     }
 
@@ -51,7 +51,7 @@ func main() {
         // call frq_wrd_with_k
         // Print the list of words
         return
-    }    else {
+    } else {
         file_name = []byte(os.Args[1])
         frq_wrd(file_name)
         return

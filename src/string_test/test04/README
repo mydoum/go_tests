@@ -1,0 +1,61 @@
+Purpose :
+
+CODE CHALLENGE: Reverse Complement Problem.
+ - Reverse complement a nucleotide pattern.
+     Input: A DNA string Pattern.
+     Output: !nrettaP, the reverse complement of Pattern.
+
+my personnal constraints :
+
+- Introduce flags to tell to the applications which function we apply
+
+
+
+
+- - - -
+How to use it ?
+
+This program is made with the Go language.
+If you don't have a go-compiler please follow the page : http://golang.org/doc/install
+
+If you have Brew:
+42sh$ brew install go
+
+[the folder containing src&bin&pkg must be in your $GOPATH in process of compiling the package]
+
+Then you just have to launch the Makefile with the command:
+42sh$ make install
+42sh$ go run main.go < -rf >  path_file
+
+
+- - - -
+
+-h [--help] shows the help
+-f [--frequent] display the most frequent sequences in the dna
+-r [--reverse] gives the complement strand and reverse it
+-o [--occurrence] shows the positions of the pattern in the dna
+
+- - - -
+TODO :
+
+[ ] Remained task
+[.] In process
+[X] Done
+----
+
+[X] Use flags
+[X] Use the old code
+[X] Create the new functions
+[ ] Build the help
+
+- - - -
+sample text Format1:
+Input
+CGGATCGGACC
+Output
+GGTCCGATCCG
+
+sample text Format2:
+Input
+CGGATCGGACC
+
