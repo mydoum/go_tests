@@ -9,7 +9,12 @@ my personnal constraints :
 
 - Introduce flags to tell to the applications which function we apply
 
+----
+CODE CHALLENGE2: Solve the Pattern Matching Problem (restated below).
 
+Pattern Matching Problem: Find all occurrences of a pattern in a string.
+     Input: Two strings, Pattern and Genome.
+     Output: All starting positions where Pattern appears as a substring of Genome.
 
 
 - - - -
@@ -25,7 +30,7 @@ If you have Brew:
 
 Then you just have to launch the Makefile with the command:
 42sh$ make install
-42sh$ go run main.go < -rf >  path_file
+42sh$ go run main.go < -rfo >  path_file
 
 
 - - - -
@@ -49,13 +54,22 @@ TODO :
 [ ] Build the help
 
 - - - -
-sample text Format1:
-Input
-CGGATCGGACC
-Output
-GGTCCGATCCG
+C1:
+Sample text Format1:
+    Input
+    CGGATCGGACC
+    Output
+    GGTCCGATCCG
 
-sample text Format2:
-Input
-CGGATCGGACC
+Sample text Format2:
+    Input
+    CGGATCGGACC
 
+----
+C2:
+Sample Input:
+     ATAT
+     GATATATGCATATACTT
+
+Sample Output:
+     1 3 9
