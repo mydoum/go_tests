@@ -2,7 +2,8 @@ package main
 
 import (
     "flag"
-    "io/ioutil" "log"
+    "io/ioutil"
+    "log"
     "strconv"
     "string_test/test04/binfo"
     "strings"
@@ -35,6 +36,12 @@ func apply(Text_name []byte, mod byte) {
         binfo.Compl_strand(binfo.Reverse(dna))
     } else if mod == 'o' {
         binfo.Pat_positions(list[i], list[i+1])
+    } else if mod == 'c' {
+        params := strings.Split(list[i+1], " ")
+        k, _ := strconv.Atoi(params[0])
+        L, _ := strconv.Atoi(params[1])
+        t, _ := strconv.Atoi(params[2])
+        binfo.Clump(list[i], k, L, t)
     }
 }
 

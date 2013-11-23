@@ -1,9 +1,42 @@
 package binfo
 
 import (
+    "container/list"
     "fmt"
     "strconv"
 )
+
+// FIXME try to use dictionnary instead of a list
+func Clump(dna string, k, L, t int) {
+    res := list.New()
+    tmp := list.New()
+
+    for inc := 0; inc < len(dna); inc++ {
+        if inc+L >= len(dna) {
+            break
+        } else {
+            sub := dna[inc : inc+L]
+            tmp = list_kmer(sub, k, t)
+            is_pres := false
+
+            for e := tmp.Front(); e != nil; e = e.Next() {
+                for f := res.Front(); f != nil; f = f.Next() {
+                    if f.Value == e.Value {
+                        is_pres = true
+                        break
+                    }
+                }
+                if !is_pres {
+                    res.PushBack(e.Value)
+                }
+                is_pres = false
+            }
+        }
+    }
+    for e := res.Front(); e != nil; e = e.Next() {
+        fmt.Println(e.Value)
+    }
+}
 
 //FIXME last space must be removed
 func Pat_positions(pat, dna string) {
@@ -48,6 +81,42 @@ func Reverse(s string) string {
     return string(runes)
 }
 
+// FIXME Use list instead of arrays
+// RETURN a list of kmer being t times in the dna
+func list_kmer(dna string, k, t int) *list.List {
+    res := list.New()
+    my := make(map[string]int)
+    var temp_wrd string
+
+    for inc := 0; inc < len(dna); inc++ {
+        if inc+k < len(dna) {
+            temp_wrd = dna[inc : inc+k]
+        } else {
+            break
+        }
+
+        is_in := false
+        for k := range my {
+            if k == temp_wrd {
+                is_in = true
+            }
+        }
+
+        if !is_in {
+            my[temp_wrd] = Kmer_occ([]byte(dna), []byte(temp_wrd))
+        }
+
+    }
+    for k, v := range my {
+        if v >= t {
+            res.PushBack(k)
+        }
+    }
+
+    return res
+}
+
+// RETURN the most recurrent pattern of k letters
 func Most_kmer(dna string, k int) {
     my := make(map[string]int)
     var temp_wrd string
@@ -84,6 +153,7 @@ func Most_kmer(dna string, k int) {
     }
 }
 
+// return the nb of occurrence of a pattern
 func Kmer_occ(f_dna, f_pat []byte) int {
     var nb_occ = 0
     var i = 0

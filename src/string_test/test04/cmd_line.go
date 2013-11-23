@@ -18,6 +18,9 @@ var h = flag.Bool("h", false, "help")
 var occurrence = flag.Bool("occurrence", false, "occurrence")
 var o = flag.Bool("o", false, "occurrence")
 
+var clump = flag.Bool("clump", false, "clump")
+var c = flag.Bool("c", false, "clump")
+
 func fhelp() {
     fmt.Println("Usage: ./bio -rfho path_file")
 }
@@ -55,6 +58,8 @@ func cmd_line() byte {
         return 'f'
     } else if *occurrence || *o {
         return 'o'
+    } else if *clump || *c {
+        return 'c'
     } else {
         fhelp()
         return byte(1)
