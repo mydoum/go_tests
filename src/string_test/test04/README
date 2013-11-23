@@ -16,6 +16,13 @@ Pattern Matching Problem: Find all occurrences of a pattern in a string.
      Input: Two strings, Pattern and Genome.
      Output: All starting positions where Pattern appears as a substring of Genome.
 
+----
+CODE CHALLENGE3: Solve the Clump Finding Problem (restated below). You will need
+to make sure that your algorithm is efficient enough to handle a large dataset.
+
+Clump Finding Problem: Find patterns forming clumps in a string.
+     Input: A string Genome, and integers k, L, and t.
+     Output: All distinct k-mers forming (L, t)-clumps in Genome.
 
 - - - -
 How to use it ?
@@ -29,8 +36,8 @@ If you have Brew:
 [the folder containing src&bin&pkg must be in your $GOPATH in process of compiling the package]
 
 Then you just have to launch the Makefile with the command:
-42sh$ make install
-42sh$ go run main.go < -rfo >  path_file
+42sh$ make
+42sh$ ./bio main.go -rfoch path_file
 
 
 - - - -
@@ -39,6 +46,7 @@ Then you just have to launch the Makefile with the command:
 -f [--frequent] display the most frequent sequences in the dna
 -r [--reverse] gives the complement strand and reverse it
 -o [--occurrence] shows the positions of the pattern in the dna
+-c [--clump] find patterns forming clumps in a string
 
 - - - -
 TODO :
@@ -55,21 +63,26 @@ TODO :
 
 - - - -
 C1:
-Sample text Format1:
-    Input
+Expected text Format:
     CGGATCGGACC
-    Output
+-
+Output:
     GGTCCGATCCG
-
-Sample text Format2:
-    Input
-    CGGATCGGACC
 
 ----
 C2:
-Sample Input:
+Expected text Format:
      ATAT
      GATATATGCATATACTT
-
-Sample Output:
+-
+Output:
      1 3 9
+
+----
+C3:
+Expected text Format:
+     CGGACTCGACAGATGTGAAGAACGACAATGTGAAGACTCGACACGACAGAGTGAAGAGAAGAGGAAACATTGTAA
+     5 50 4
+-
+Output:
+     CGACA GAAGA
