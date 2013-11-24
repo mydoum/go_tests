@@ -1,9 +1,0 @@
-The go function  byte.Count(ATATATCCATAG, ATA) = 2
-seems legit, but in our case we should account for overlapping occurrences of b in a ->  (3)
-
-TODO : Create the specific function
-
-[X] Take 2 arguments and apply byte.Count on it
-[X] Compare the result with a function having an overlapping occurrences behavior
-    [X] the example above should give 3 as a result
-[X] Send an error if there is not the correct number of args
