@@ -7,21 +7,29 @@ import (
 
 func Clump(dna string, k, L, t int) {
     res := make(map[string]int)
+    tmp := make(map[string]int)
 
-    for inc := 0; inc+L < len(dna); inc++ {
-        sub := dna[inc : inc+L]
-        for i := 0; i+k < len(sub); i++ {
-            if res[sub[i:i+k]] == 0 {
-                if Kmer_occ([]byte(sub), []byte(sub[i:i+k])) >= t {
-                    res[sub[i:i+k]] = 1
-                }
-            }
+    for j := 0; j < L; j++ {
+        tmp[dna[j:j+k]] = Kmer_occ([]byte(dna[0:L-1]), []byte(dna[j:j+k]))
+
+        if tmp[dna[j:j+k]] >= t {
+            res[dna[j:j+k]] = 1
         }
     }
 
+    for inc := 1; inc+L < len(dna); inc++ {
+        tmp[dna[inc-1:inc-1+k]] -= 1
+        tmp[dna[inc+L-k:inc+L]] += 1
+
+        if tmp[dna[inc+L-k:inc+L]] >= t {
+            res[dna[inc+L-k:inc+L]] = 1
+        }
+    }
     for k, _ := range res {
         fmt.Print(k + " ")
     }
+
+    fmt.Println("\n Number of elements : ", len(res))
 }
 
 //FIXME last space must be removed

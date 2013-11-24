@@ -1,12 +1,12 @@
 package main
 
 import (
+    "bioinfo/test04/binfo"
     "flag"
     "fmt"
     "io/ioutil"
     "log"
     "strconv"
-    "string_test/test04/binfo"
     "strings"
     "time"
 )

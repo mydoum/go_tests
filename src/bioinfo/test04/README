@@ -1,30 +1,3 @@
-Purpose :
-
-CODE CHALLENGE: Reverse Complement Problem.
- - Reverse complement a nucleotide pattern.
-     Input: A DNA string Pattern.
-     Output: !nrettaP, the reverse complement of Pattern.
-
-my personnal constraints :
-
-- Introduce flags to tell to the applications which function we apply
-
-----
-CODE CHALLENGE2: Solve the Pattern Matching Problem (restated below).
-
-Pattern Matching Problem: Find all occurrences of a pattern in a string.
-     Input: Two strings, Pattern and Genome.
-     Output: All starting positions where Pattern appears as a substring of Genome.
-
-----
-CODE CHALLENGE3: Solve the Clump Finding Problem (restated below). You will need
-to make sure that your algorithm is efficient enough to handle a large dataset.
-
-Clump Finding Problem: Find patterns forming clumps in a string.
-     Input: A string Genome, and integers k, L, and t.
-     Output: All distinct k-mers forming (L, t)-clumps in Genome.
-
-- - - -
 How to use it ?
 
 This program is made with the Go language.
@@ -48,8 +21,41 @@ Then you just have to launch the Makefile with the command:
 -o [--occurrence] shows the positions of the pattern in the dna
 -c [--clump] find patterns forming clumps in a string
 
+
+A k-mer is : a string of length k and defined by Count(Text, Pattern) as the number
+of times that a k-mer Pattern appears as a substring of Text
 - - - -
+
+Purpose :
+
+CODE CHALLENGE: Reverse Complement Problem.
+ - Reverse complement a nucleotide pattern.
+     Input: A DNA string Pattern.
+     Output: !nrettaP, the reverse complement of Pattern.
+
+----
+CODE CHALLENGE2: Solve the Pattern Matching Problem (restated below).
+
+Pattern Matching Problem: Find all occurrences of a pattern in a string.
+     Input: Two strings, Pattern and Genome.
+     Output: All starting positions where Pattern appears as a substring of Genome.
+
+----
+CODE CHALLENGE3: Solve the Clump Finding Problem (restated below). You will need
+to make sure that your algorithm is efficient enough to handle a large dataset.
+
+Clump Finding Problem: Find patterns forming clumps in a string.
+     Input: A string Genome, and integers k, L, and t.
+     Output: All distinct k-mers forming (L, t)-clumps in Genome.
+
+Resolved:
+ ./bio -c test_files/clumps/E-coli.txt
+Number of 9-mer found : 1904
+The call took 1.364566341s to run.
 TODO :
+
+
+- - - -
 
 [ ] Remained task
 [.] In process
@@ -86,3 +92,4 @@ Expected text Format:
 -
 Output:
      CGACA GAAGA
+     Number of elements: 2
