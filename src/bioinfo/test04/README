@@ -10,7 +10,7 @@ If you have Brew:
 
 Then you just have to launch the Makefile with the command:
 42sh$ make
-42sh$ ./bio main.go -rfoch path_file
+42sh$ ./bio -rfoch path_file
 
 
 - - - -
@@ -52,10 +52,9 @@ Resolved:
  ./bio -c test_files/clumps/E-coli.txt
 Number of 9-mer found : 1904
 The call took 1.364566341s to run.
-TODO :
-
 
 - - - -
+TODO :
 
 [ ] Remained task
 [.] In process
